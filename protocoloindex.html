@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Digital - Osasco</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #212121;
+        }
+
+        .banner-bg {
+            background-color: #212121;
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .green-shape {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60%;
+            height: 100%;
+            background-color: #4CAF50;
+            clip-path: polygon(0 0, 100% 0, 40% 100%, 0 100%);
+            z-index: 1;
+        }
+
+        .green-shape-dark {
+            position: absolute;
+            top: 0;
+            left: 0,
+            width: 55%;
+            height: 100%;
+            background-color: #388E3C;
+            clip-path: polygon(0 0, 80% 0, 30% 100%, 0 100%);
+            z-index: 2;
+        }
+
+        .logo-container {
+            position: relative;
+            z-index: 10;
+            padding-top: 120px;
+            text-align: center;
+            color: white;
+        }
+
+        .logo-main {
+            font-size: 3.5rem;
+            font-weight: 500;
+            letter-spacing: 0.5rem;
+            line-height: 1;
+        }
+
+        .logo-sub {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .custom-input {
+            background-color: white;
+            border-radius: 4px;
+            padding: 12px 16px;
+            width: 100%;
+            color: #333;
+            font-size: 1.1rem;
+            border: none;
+        }
+
+        .recaptcha-box {
+            background-color: white;
+            border-radius: 3px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .btn-confirm {
+            background-color: #43a047;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+
+        .btn-confirm:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Browser Header Mockup -->
+    <div class="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-4 text-gray-500">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-lock text-sm"></i>
+        </div>
+        <div class="text-gray-800 font-medium text-lg">protocolo.osasco.sp.gov.br</div>
+        <div class="text-gray-500">
+            <i class="fa-solid fa-rotate-right"></i>
+        </div>
+    </div>
+
+    <!-- Main Banner -->
+    <div class="banner-bg">
+        <div class="green-shape"></div>
+        <div class="green-shape-dark"></div>
+        <div class="logo-container">
+            <div class="logo-main">PROTOCOLO</div>
+            <div class="logo-sub">DIGITAL</div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-2xl mx-auto px-6 py-10">
+        <h1 class="text-white text-3xl font-normal mb-10">Consultar Protocolo</h1>
+
+        <div class="space-y-8">
+
+            <div>
+                <label class="block text-white text-lg mb-2">Número do Protocolo</label>
+                <input type="text" class="custom-input" value="27105273000157" readonly>
+            </div>
+
+            <div>
+                <label class="block text-white text-lg mb-2">Senha para Consulta Online</label>
+                <input type="text" class="custom-input" value="2025U237150052" readonly>
+            </div>
+
+            <div class="recaptcha-box">
+                <div class="flex items-center gap-3">
+                    <div class="w-7 h-7 border-2 border-green-600 rounded flex items-center justify-center">
+                        <i class="fa-solid fa-check text-green-600"></i>
+                    </div>
+                    <span class="text-gray-700 text-sm font-medium">Não sou um robô</span>
+                </div>
+                <div class="text-center">
+                    <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" class="w-8 mx-auto">
+                    <div class="text-[10px] text-gray-500">reCAPTCHA</div>
+                    <div class="text-[8px] text-gray-400">Privacidade - Termos</div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="text-white underline text-lg">Voltar para tela de login.</a>
+            </div>
+
+            <!-- BOTÃO CONFIRMAR → BAIXA O PDF -->
+            <div class="pt-4">
+                <a href="arquivo.pdf" download class="btn-confirm">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    <span>Confirmar</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
